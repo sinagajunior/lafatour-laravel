@@ -14,15 +14,15 @@ class PackageController extends Controller
 
         $query = Package::active()->where('package_type_id', $packageType->id);
 
-        if ($request->has('price_min')) {
+        if ($request->filled('price_min')) {
             $query->where('price', '>=', $request->price_min);
         }
 
-        if ($request->has('price_max')) {
+        if ($request->filled('price_max')) {
             $query->where('price', '<=', $request->price_max);
         }
 
-        if ($request->has('duration')) {
+        if ($request->filled('duration')) {
             $query->where('duration_days', $request->duration);
         }
 
