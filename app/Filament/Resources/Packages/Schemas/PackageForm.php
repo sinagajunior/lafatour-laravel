@@ -86,8 +86,6 @@ class PackageForm
                 TextInput::make('gallery_images'),
                 TextInput::make('meta_title'),
                 TextInput::make('meta_description'),
-                Toggle::make('is_featured')
-                    ->required(),
                 Toggle::make('is_active')
                     ->required(),
             ]);

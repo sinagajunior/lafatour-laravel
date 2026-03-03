@@ -45,8 +45,6 @@ class TeamMemberForm
                 TextInput::make('license_number'),
                 Toggle::make('is_active')
                     ->required(),
-                Toggle::make('is_featured')
-                    ->required(),
             ]);
     }
 }

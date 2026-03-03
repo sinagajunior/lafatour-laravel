@@ -40,8 +40,6 @@ class TestimonialForm
                     ->url(),
                 Toggle::make('is_approved')
                     ->required(),
-                Toggle::make('is_featured')
-                    ->required(),
             ]);
     }
 }
