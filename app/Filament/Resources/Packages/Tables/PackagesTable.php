@@ -60,15 +60,14 @@ class PackagesTable
                     ->numeric()
                     ->sortable()
                     ->formatStateUsing(fn ($state) => $state ?? '∞'),
-                TextColumn::make('hotel_mekkah')
-                    ->label('Mekkah Hotel')
+                TextColumn::make('hotel')
+                    ->label('Hotel')
+                    ->formatStateUsing(function ($record) {
+                        $mekkah = $record->hotel_mekkah ? 'Mekkah: ' . $record->hotel_mekkah : '';
+                        $madinah = $record->hotel_madinah ? 'Madinah: ' . $record->hotel_madinah : '';
+                        return collect([$mekkah, $madinah])->filter()->join(' | ');
+                    })
                     ->searchable()
-                    ->limit(20)
-                    ->toggleable(),
-                TextColumn::make('hotel_madinah')
-                    ->label('Madinah Hotel')
-                    ->searchable()
-                    ->limit(20)
                     ->toggleable(),
                 TextColumn::make('airline')
                     ->searchable()
