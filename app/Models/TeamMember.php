@@ -27,7 +27,6 @@ class TeamMember extends Model
         'license_number',
         'is_active',
         'is_featured',
-        'sort_order',
     ];
 
     protected $casts = [

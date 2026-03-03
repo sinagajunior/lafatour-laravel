@@ -22,7 +22,6 @@ class Gallery extends Model
         'alt_text',
         'video_url',
         'is_video',
-        'sort_order',
         'is_active',
     ];
 

@@ -12,13 +12,6 @@ class PackageType extends Model
         'slug',
         'description',
         'icon',
-        'color',
-        'is_active',
-        'sort_order',
-    ];
-
-    protected $casts = [
-        'is_active' => 'boolean',
     ];
 
     public function packages(): HasMany
@@ -26,13 +19,8 @@ class PackageType extends Model
         return $this->hasMany(Package::class);
     }
 
-    public function scopeActive($query)
+    public function scopeLatest($query)
     {
-        return $query->where('is_active', true);
-    }
-
-    public function scopeOrdered($query)
-    {
-        return $query->orderBy('sort_order');
+        return $query->orderBy('created_at', 'desc');
     }
 }

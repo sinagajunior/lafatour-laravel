@@ -22,7 +22,6 @@ class Testimonial extends Model
         'video_url',
         'is_approved',
         'is_featured',
-        'sort_order',
     ];
 
     protected $casts = [

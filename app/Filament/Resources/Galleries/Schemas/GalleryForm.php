@@ -67,12 +67,6 @@ class GalleryForm
                     ->label('Is Video?')
                     ->inline(false)
                     ->default(false),
-                TextInput::make('sort_order')
-                    ->label('Sort Order')
-                    ->required()
-                    ->numeric()
-                    ->default(0)
-                    ->helperText('Lower numbers appear first'),
                 Toggle::make('is_active')
                     ->label('Active')
                     ->inline(false)

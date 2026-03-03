@@ -27,7 +27,6 @@ class BlogPost extends Model
         'meta_title',
         'meta_description',
         'view_count',
-        'sort_order',
     ];
 
     protected $casts = [

@@ -5,7 +5,6 @@ namespace App\Filament\Resources\PackageTypes\Schemas;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class PackageTypeForm
@@ -43,30 +42,8 @@ class PackageTypeForm
                         'heroicono-airplane' => 'Airplane (Flight)',
                     ])
                     ->searchable()
+                    ->default('heroicono-building-office')
                     ->helperText('Select an icon for this package type'),
-                Select::make('color')
-                    ->label('Color Badge')
-                    ->options([
-                        'primary' => 'Blue (Primary)',
-                        'success' => 'Green (Success)',
-                        'warning' => 'Yellow (Warning)',
-                        'danger' => 'Red (Danger)',
-                        'info' => 'Cyan (Info)',
-                        'gray' => 'Gray (Neutral)',
-                    ])
-                    ->default('primary')
-                    ->required()
-                    ->helperText('Color for badges and labels'),
-                Toggle::make('is_active')
-                    ->label('Active')
-                    ->default(true)
-                    ->inline(false)
-                    ->helperText('Enable this package type'),
-                TextInput::make('sort_order')
-                    ->label('Sort Order')
-                    ->numeric()
-                    ->default(0)
-                    ->helperText('Lower numbers appear first'),
             ]);
     }
 }

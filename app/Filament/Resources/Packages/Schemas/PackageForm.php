@@ -90,10 +90,6 @@ class PackageForm
                     ->required(),
                 Toggle::make('is_active')
                     ->required(),
-                TextInput::make('sort_order')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
             ]);
     }
 }

@@ -16,9 +16,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Package Routes
 Route::prefix('paket')->name('packages.')->group(function () {
-    Route::get('/umroh', [PackageController::class, 'umroh'])->name('umroh');
-    Route::get('/haji', [PackageController::class, 'haji'])->name('haji');
-    Route::get('/{slug}', [PackageController::class, 'show'])->name('show');
+    Route::get('/{typeSlug}', [PackageController::class, 'index'])->name('index');
+    Route::get('/detail/{slug}', [PackageController::class, 'show'])->name('show');
 });
 
 // About Page

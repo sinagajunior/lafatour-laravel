@@ -45,7 +45,6 @@ class Package extends Model
         'meta_description',
         'is_featured',
         'is_active',
-        'sort_order',
     ];
 
     protected $casts = [

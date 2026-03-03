@@ -5,8 +5,6 @@ namespace App\Filament\Resources\PackageTypes\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\BadgeColumn;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -25,35 +23,16 @@ class PackageTypesTable
                     ->label('Slug')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                BadgeColumn::make('color')
-                    ->label('Color')
-                    ->colors([
-                        'primary' => 'primary',
-                        'success' => 'success',
-                        'warning' => 'warning',
-                        'danger' => 'danger',
-                        'info' => 'info',
-                        'gray' => 'gray',
-                    ]),
                 TextColumn::make('description')
                     ->label('Description')
                     ->limit(50)
                     ->toggleable(),
-                IconColumn::make('is_active')
-                    ->label('Active')
-                    ->boolean()
-                    ->toggleable(),
-                TextColumn::make('sort_order')
-                    ->label('Order')
-                    ->sortable()
-                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label('Created')
                     ->dateTime('M j, Y')
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
-            ->defaultSort('sort_order', 'asc')
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

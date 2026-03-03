@@ -68,10 +68,6 @@ class GalleriesTable
                     ->falseIcon('heroicon-o-photo')
                     ->trueColor('warning')
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('sort_order')
-                    ->label('Order')
-                    ->sortable()
-                    ->toggleable(),
                 IconColumn::make('is_active')
                     ->label('Active')
                     ->boolean()
@@ -82,7 +78,8 @@ class GalleriesTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->defaultSort('sort_order', 'asc')
+            ->defaultSort('created_at', 'desc')
+            ->reorderRecords('created_at', 'desc')
             ->paginated([10, 25, 50, 100])
             ->filters([
                 SelectFilter::make('category')

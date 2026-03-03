@@ -55,10 +55,6 @@ class BlogPostForm
                     ->required()
                     ->numeric()
                     ->default(0),
-                TextInput::make('sort_order')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
             ]);
     }
 }

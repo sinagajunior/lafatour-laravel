@@ -47,10 +47,6 @@ class TeamMemberForm
                     ->required(),
                 Toggle::make('is_featured')
                     ->required(),
-                TextInput::make('sort_order')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
             ]);
     }
 }

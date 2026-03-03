@@ -163,6 +163,7 @@
                     <!-- Desktop Menu -->
                     <div class="hidden lg:flex items-center space-x-8">
                         <a href="{{ route('home') }}" class="text-gray-700 hover:text-amber-600 font-medium transition">Beranda</a>
+                        @if(isset($packageTypes) && $packageTypes->count() > 0)
                         <div class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                             <button class="text-gray-700 hover:text-amber-600 font-medium transition flex items-center">
                                 Paket
@@ -170,11 +171,15 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div x-show="open" x-transition class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50" style="display: none;">
-                                <a href="{{ route('packages.umroh') }}" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600 rounded-lg mx-2">Paket Umroh</a>
-                                <a href="{{ route('packages.haji') }}" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600 rounded-lg mx-2">Paket Haji</a>
+                            <div x-show="open" x-transition class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50" style="display: none;">
+                                @foreach($packageTypes as $type)
+                                <a href="{{ route('packages.index', $type->slug) }}" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600 rounded-lg mx-2">
+                                    {{ $type->name }}
+                                </a>
+                                @endforeach
                             </div>
                         </div>
+                        @endif
                         <a href="{{ route('about') }}" class="text-gray-700 hover:text-amber-600 font-medium transition">Tentang Kami</a>
                         <a href="{{ route('gallery') }}" class="text-gray-700 hover:text-amber-600 font-medium transition">Galeri</a>
                         <a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-amber-600 font-medium transition">Berita</a>
@@ -210,13 +215,18 @@
             <div x-show="mobileMenuOpen" x-transition class="lg:hidden bg-white border-t" style="display: none;">
                 <div class="px-4 py-4 space-y-3">
                     <a href="{{ route('home') }}" class="block py-2 text-gray-700 hover:text-sky-600 font-medium">Beranda</a>
+                    @if(isset($packageTypes) && $packageTypes->count() > 0)
                     <div class="py-2">
                         <span class="text-gray-700 font-medium">Paket</span>
                         <div class="mt-2 space-y-2 pl-4">
-                            <a href="{{ route('packages.umroh') }}" class="block py-1 text-gray-600 hover:text-sky-600">Paket Umroh</a>
-                            <a href="{{ route('packages.haji') }}" class="block py-1 text-gray-600 hover:text-sky-600">Paket Haji</a>
+                            @foreach($packageTypes as $type)
+                            <a href="{{ route('packages.index', $type->slug) }}" class="block py-1 text-gray-600 hover:text-sky-600">
+                                {{ $type->name }}
+                            </a>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
                     <a href="{{ route('about') }}" class="block py-2 text-gray-700 hover:text-sky-600 font-medium">Tentang Kami</a>
                     <a href="{{ route('gallery') }}" class="block py-2 text-gray-700 hover:text-sky-600 font-medium">Galeri</a>
                     <a href="{{ route('blog.index') }}" class="block py-2 text-gray-700 hover:text-sky-600 font-medium">Berita</a>
@@ -282,8 +292,11 @@
                     <h3 class="text-white font-semibold mb-4">Tautan Cepat</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ route('home') }}" class="hover:text-sky-400 transition">Beranda</a></li>
-                        <li><a href="{{ route('packages.umroh') }}" class="hover:text-sky-400 transition">Paket Umroh</a></li>
-                        <li><a href="{{ route('packages.haji') }}" class="hover:text-sky-400 transition">Paket Haji</a></li>
+                        @if(isset($packageTypes) && $packageTypes->count() > 0)
+                            @foreach($packageTypes->take(2) as $type)
+                            <li><a href="{{ route('packages.index', $type->slug) }}" class="hover:text-sky-400 transition">{{ $type->name }}</a></li>
+                            @endforeach
+                        @endif
                         <li><a href="{{ route('about') }}" class="hover:text-sky-400 transition">Tentang Kami</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-sky-400 transition">Kontak</a></li>
                     </ul>
@@ -293,10 +306,11 @@
                 <div>
                     <h3 class="text-white font-semibold mb-4">Layanan</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-sky-400 transition">Umroh Reguler</a></li>
-                        <li><a href="#" class="hover:text-sky-400 transition">Umroh Plus</a></li>
-                        <li><a href="#" class="hover:text-sky-400 transition">Haji Furoda</a></li>
-                        <li><a href="#" class="hover:text-sky-400 transition">Haji Plus</a></li>
+                        @if(isset($packageTypes) && $packageTypes->count() > 0)
+                            @foreach($packageTypes->take(4) as $type)
+                            <li><a href="{{ route('packages.index', $type->slug) }}" class="hover:text-sky-400 transition">{{ $type->name }}</a></li>
+                            @endforeach
+                        @endif
                         <li><a href="{{ route('tracking') }}" class="hover:text-sky-400 transition">Cek Pemesanan</a></li>
                     </ul>
                 </div>

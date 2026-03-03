@@ -85,6 +85,7 @@ class BlogPostsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('created_at', 'desc')
+            ->reorderRecords('created_at', 'desc')
             ->paginated([10, 25, 50, 100])
             ->filters([
                 SelectFilter::make('category')
