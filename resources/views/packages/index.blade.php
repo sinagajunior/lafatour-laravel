@@ -57,11 +57,6 @@
                     <div class="relative h-56 overflow-hidden">
                         <img src="{{ $package->featured_image_url }}" alt="{{ $package->name }}"
                              class="w-full h-full object-cover">
-                        @if($package->is_featured)
-                        <div class="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Featured
-                        </div>
-                        @endif
                         @if($package->isEarlyBird())
                         <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Early Bird

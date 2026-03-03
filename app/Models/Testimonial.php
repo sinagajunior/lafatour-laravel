@@ -21,7 +21,6 @@ class Testimonial extends Model
         'photo',
         'video_url',
         'is_approved',
-        'is_featured',
     ];
 
     protected $casts = [
@@ -29,7 +28,6 @@ class Testimonial extends Model
         'travel_date' => 'date',
         'package_id' => 'integer',
         'is_approved' => 'boolean',
-        'is_featured' => 'boolean',
     ];
 
     public function package()
@@ -40,11 +38,6 @@ class Testimonial extends Model
     public function scopeApproved($query)
     {
         return $query->where('is_approved', true);
-    }
-
-    public function scopeFeatured($query)
-    {
-        return $query->where('is_featured', true);
     }
 
     public function scopeHighRated($query)

@@ -26,23 +26,16 @@ class TeamMember extends Model
         'experience_years',
         'license_number',
         'is_active',
-        'is_featured',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
-        'is_featured' => 'boolean',
         'social_media' => 'array',
     ];
 
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
-    }
-
-    public function scopeFeatured($query)
-    {
-        return $query->where('is_featured', true);
     }
 
     public function scopeManagement($query)

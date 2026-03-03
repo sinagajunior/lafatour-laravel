@@ -43,7 +43,6 @@ class Package extends Model
         'gallery_images',
         'meta_title',
         'meta_description',
-        'is_featured',
         'is_active',
     ];
 
@@ -58,7 +57,6 @@ class Package extends Model
         'includes_visa' => 'boolean',
         'includes_meals' => 'boolean',
         'includes_guide' => 'boolean',
-        'is_featured' => 'boolean',
         'is_active' => 'boolean',
         'gallery_images' => 'array',
         'inclusions' => 'array',
@@ -93,11 +91,6 @@ class Package extends Model
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
-    }
-
-    public function scopeFeatured($query)
-    {
-        return $query->where('is_featured', true);
     }
 
     public function scopeUmroh($query)
