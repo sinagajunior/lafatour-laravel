@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Package;
+use App\Models\Testimonial;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        $featuredPackages = Package::active()
+            ->featured()
+            ->withCount('testimonials')
+            ->take(6)
+            ->get();
+
+        $testimonials = Testimonial::approved()
+            ->where('rating', '>=', 4)
+            ->featured()
+            ->take(6)
+            ->get();
+
+        return view('home', compact('featuredPackages', 'testimonials'));
+    }
+}

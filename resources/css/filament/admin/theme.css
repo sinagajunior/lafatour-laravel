@@ -1,0 +1,582 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* ============================================
+   TailAdmin Professional Theme for LaFatour
+   Based on TailAdmin Laravel Design System
+   ============================================ */
+
+:root {
+    /* TailAdmin Brand Colors (Professional Blue) */
+    --ta-brand-25: #f2f7ff;
+    --ta-brand-50: #ecf3ff;
+    --ta-brand-100: #dde9ff;
+    --ta-brand-200: #c2d6ff;
+    --ta-brand-300: #9cb9ff;
+    --ta-brand-400: #7592ff;
+    --ta-brand-500: #465fff;
+    --ta-brand-600: #3641f5;
+    --ta-brand-700: #2a31d8;
+    --ta-brand-800: #252dae;
+    --ta-brand-900: #262e89;
+
+    /* Gray Scale */
+    --ta-gray-25: #fcfcfd;
+    --ta-gray-50: #f9fafb;
+    --ta-gray-100: #f2f4f7;
+    --ta-gray-200: #e4e7ec;
+    --ta-gray-300: #d0d5dd;
+    --ta-gray-400: #98a2b3;
+    --ta-gray-500: #667085;
+    --ta-gray-600: #475467;
+    --ta-gray-700: #344054;
+    --ta-gray-800: #1d2939;
+    --ta-gray-900: #101828;
+
+    /* Status Colors */
+    --ta-success: #12b76a;
+    --ta-success-light: #ecfdf3;
+    --ta-warning: #f79009;
+    --ta-warning-light: #fffaeb;
+    --ta-danger: #f04438;
+    --ta-danger-light: #fef3f2;
+    --ta-info: #0ba5ec;
+    --ta-info-light: #f0f9ff;
+
+    /* Shadows */
+    --ta-shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    --ta-shadow-sm: 0 1px 3px 0 rgba(16, 24, 40, 0.1), 0 1px 2px 0 rgba(16, 24, 40, 0.06);
+    --ta-shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+    --ta-shadow-lg: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+    --ta-shadow-xl: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03);
+
+    /* Focus Ring */
+    --ta-focus-ring: 0 0 0 4px rgba(70, 95, 255, 0.12);
+}
+
+/* ============================================
+   Global Styles
+   ============================================ */
+
+*,
+::after,
+::before {
+    border-color: var(--ta-gray-200) !important;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+    background: var(--ta-gray-50) !important;
+    color: var(--ta-gray-900) !important;
+}
+
+.fi-layout,
+.filament-layout {
+    background: var(--ta-gray-50) !important;
+}
+
+.fi-main,
+.filament-main {
+    background: var(--ta-gray-50) !important;
+}
+
+/* ============================================
+   Sidebar - TailAdmin Style
+   ============================================ */
+
+.fi-sidebar,
+aside.filament-sidebar,
+[class*="filament-sidebar"],
+aside[class*="sidebar"] {
+    background: #ffffff !important;
+    border-right: 1px solid var(--ta-gray-200) !important;
+    box-shadow: none !important;
+}
+
+.fi-sidebar-header,
+.filament-sidebar-header,
+.filament-sidebar > div:first-child {
+    background: transparent !important;
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+    padding: 1.5rem 1.25rem !important;
+}
+
+.fi-sidebar-navigation,
+.filament-sidebar-navigation {
+    background: transparent !important;
+    padding: 1rem 0 !important;
+}
+
+.fi-sidebar-group-label,
+.filament-sidebar-section-label {
+    color: var(--ta-gray-500) !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-weight: 600 !important;
+    padding: 1rem 1.25rem 0.5rem !important;
+}
+
+.fi-sidebar-item,
+.filament-sidebar-item,
+aside nav a,
+aside nav button {
+    color: var(--ta-gray-700) !important;
+    background: transparent !important;
+    border-radius: 0.5rem !important;
+    margin: 0.125rem 0.75rem !important;
+    padding: 0.625rem 0.75rem !important;
+    transition: all 0.15s ease !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+}
+
+.fi-sidebar-item:hover,
+.filament-sidebar-item:hover,
+aside nav a:hover,
+aside nav button:hover {
+    background: var(--ta-gray-100) !important;
+    color: var(--ta-gray-900) !important;
+}
+
+.fi-sidebar-item-active,
+.filament-sidebar-item-active,
+aside nav a[class*="active"],
+aside nav .filament-sidebar-item-active,
+aside nav button[class*="active"] {
+    background: var(--ta-brand-50) !important;
+    color: var(--ta-brand-500) !important;
+    font-weight: 600 !important;
+}
+
+.fi-sidebar-icon,
+.filament-sidebar-item svg {
+    color: var(--ta-gray-500) !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+}
+
+.fi-sidebar-item-active .fi-sidebar-icon,
+.filament-sidebar-item-active svg,
+aside nav a[class*="active"] svg {
+    color: var(--ta-brand-500) !important;
+}
+
+.fi-sidebar-item:not(.fi-sidebar-item-active):hover .fi-sidebar-icon,
+aside nav a:not([class*="active"]):hover svg {
+    color: var(--ta-gray-700) !important;
+}
+
+/* ============================================
+   Topbar/Header - TailAdmin Style
+   ============================================ */
+
+.fi-topbar,
+.filament-topbar,
+header[class*="topbar"],
+header[class*="header"] {
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+    box-shadow: var(--ta-shadow-xs) !important;
+    height: 4.5rem !important;
+}
+
+.fi-topbar-content,
+.filament-topbar-content {
+    background: transparent !important;
+}
+
+/* Search Input */
+.fi-topbar-search input[type="search"],
+.fi-topbar-search input,
+header input[type="search"] {
+    background: var(--ta-gray-50) !important;
+    border: 1px solid var(--ta-gray-300) !important;
+    border-radius: 0.5rem !important;
+    color: var(--ta-gray-900) !important;
+    font-size: 0.875rem !important;
+    padding: 0.625rem 0.875rem !important;
+    transition: all 0.15s ease !important;
+}
+
+.fi-topbar-search input:focus,
+header input[type="search"]:focus {
+    border-color: var(--ta-brand-500) !important;
+    box-shadow: var(--ta-focus-ring) !important;
+    outline: none !important;
+}
+
+/* ============================================
+   Cards - TailAdmin Style
+   ============================================ */
+
+.filament-card,
+.fi-card,
+[class*="filament-card"] {
+    background: #ffffff !important;
+    border: 1px solid var(--ta-gray-200) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: var(--ta-shadow-sm) !important;
+    overflow: hidden !important;
+}
+
+.filament-card-header,
+.fi-card-header {
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+    padding: 1.25rem 1.5rem !important;
+}
+
+.filament-heading,
+.fi-heading,
+.filament-card-header-title {
+    color: var(--ta-gray-900) !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+/* ============================================
+   Tables - TailAdmin Style
+   ============================================ */
+
+.filament-tables-container,
+.filament-table,
+.fi-table {
+    background: #ffffff !important;
+    border: 1px solid var(--ta-gray-200) !important;
+    border-radius: 0.75rem !important;
+    overflow: hidden !important;
+    box-shadow: var(--ta-shadow-sm) !important;
+}
+
+.filament-tables-header,
+.filament-table thead,
+.fi-table thead {
+    background: var(--ta-gray-50) !important;
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+}
+
+.filament-tables-header-cell,
+.filament-table th,
+.fi-table th {
+    color: var(--ta-gray-600) !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+    padding: 0.875rem 1.25rem !important;
+    background: transparent !important;
+}
+
+.filament-table tr,
+.fi-table tr {
+    transition: background-color 0.15s ease !important;
+}
+
+.filament-table tbody tr:hover,
+.fi-table tbody tr:hover {
+    background: var(--ta-gray-50) !important;
+}
+
+.filament-tables-cell,
+.filament-table td,
+.fi-table td {
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+    color: var(--ta-gray-700) !important;
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.875rem !important;
+}
+
+.filament-table tbody tr:last-child td,
+.fi-table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* ============================================
+   Pagination - TailAdmin Style
+   ============================================ */
+
+.filament-tables-pagination {
+    background: #ffffff !important;
+    border-top: 1px solid var(--ta-gray-200) !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.filament-tables-pagination-button {
+    min-width: 2.25rem !important;
+    height: 2.25rem !important;
+    padding: 0 0.875rem !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid var(--ta-gray-300) !important;
+    background: #ffffff !important;
+    color: var(--ta-gray-700) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    transition: all 0.15s ease !important;
+}
+
+.filament-tables-pagination-button:hover:not(:disabled) {
+    background: var(--ta-brand-500) !important;
+    color: #ffffff !important;
+    border-color: var(--ta-brand-500) !important;
+}
+
+.filament-tables-pagination-button:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background: var(--ta-gray-50) !important;
+}
+
+.filament-tables-pagination-button.active {
+    background: var(--ta-brand-500) !important;
+    color: #ffffff !important;
+    border-color: var(--ta-brand-500) !important;
+    font-weight: 600 !important;
+}
+
+.filament-tables-pagination-previous,
+.filament-tables-pagination-next {
+    padding: 0 1rem !important;
+}
+
+.filament-tables-pagination-info {
+    color: var(--ta-gray-500) !important;
+    font-size: 0.875rem !important;
+}
+
+/* Per Page Select */
+.filament-tables-pagination-per-page select {
+    padding: 0.5rem 0.75rem !important;
+    border: 1px solid var(--ta-gray-300) !important;
+    border-radius: 0.5rem !important;
+    background: #ffffff !important;
+    color: var(--ta-gray-700) !important;
+    font-size: 0.875rem !important;
+}
+
+/* ============================================
+   Forms & Inputs - TailAdmin Style
+   ============================================ */
+
+.filament-form-field-label,
+.fi-label {
+    color: var(--ta-gray-700) !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+}
+
+.filament-form-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    border: 1px solid var(--ta-gray-300) !important;
+    border-radius: 0.5rem !important;
+    background: #ffffff !important;
+    color: var(--ta-gray-900) !important;
+    font-size: 0.875rem !important;
+    padding: 0.625rem 0.875rem !important;
+    transition: all 0.15s ease !important;
+}
+
+.filament-form-input:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--ta-brand-500) !important;
+    box-shadow: var(--ta-focus-ring) !important;
+    outline: none !important;
+}
+
+/* ============================================
+   Buttons - TailAdmin Style
+   ============================================ */
+
+.filament-button,
+.fi-button-primary,
+button[class*="primary"] {
+    background: var(--ta-brand-500) !important;
+    color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    font-weight: 500 !important;
+    transition: all 0.15s ease !important;
+    padding: 0.625rem 1rem !important;
+    font-size: 0.875rem !important;
+}
+
+.filament-button:hover,
+.fi-button-primary:hover,
+button[class*="primary"]:hover {
+    background: var(--ta-brand-600) !important;
+}
+
+.fi-button-secondary,
+button[class*="secondary"] {
+    background: #ffffff !important;
+    color: var(--ta-gray-700) !important;
+    border: 1px solid var(--ta-gray-300) !important;
+}
+
+.fi-button-secondary:hover,
+button[class*="secondary"]:hover {
+    background: var(--ta-gray-50) !important;
+}
+
+/* ============================================
+   Badges - TailAdmin Style
+   ============================================ */
+
+.filament-badge,
+.fi-badge {
+    border-radius: 9999px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    padding: 0.25rem 0.625rem !important;
+}
+
+.fi-badge-primary {
+    background: var(--ta-brand-50) !important;
+    color: var(--ta-brand-600) !important;
+}
+
+.fi-badge-success {
+    background: var(--ta-success-light) !important;
+    color: var(--ta-success) !important;
+}
+
+.fi-badge-warning {
+    background: var(--ta-warning-light) !important;
+    color: var(--ta-warning) !important;
+}
+
+.fi-badge-danger {
+    background: var(--ta-danger-light) !important;
+    color: var(--ta-danger) !important;
+}
+
+.fi-badge-info {
+    background: var(--ta-info-light) !important;
+    color: var(--ta-info) !important;
+}
+
+/* ============================================
+   IconColumn (Boolean)
+   ============================================ */
+
+.filament-tables-icon-column {
+    font-size: 1rem !important;
+}
+
+.filament-tables-icon-column svg {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+}
+
+.filament-tables-icon-column svg[class*="check"],
+.filament-tables-icon-column .heroicon-o-check-circle {
+    color: var(--ta-success) !important;
+}
+
+.filament-tables-icon-column svg[class*="x"],
+.filament-tables-icon-column .heroicon-o-x-circle {
+    color: var(--ta-danger) !important;
+}
+
+/* ============================================
+   Modal - TailAdmin Style
+   ============================================ */
+
+.filament-modal,
+.fi-modal {
+    background: #ffffff !important;
+    border-radius: 0.75rem !important;
+    box-shadow: var(--ta-shadow-xl) !important;
+}
+
+.filament-modal-header {
+    border-bottom: 1px solid var(--ta-gray-200) !important;
+    padding: 1.25rem 1.5rem !important;
+}
+
+.filament-modal-footer {
+    border-top: 1px solid var(--ta-gray-200) !important;
+    padding: 1.25rem 1.5rem !important;
+}
+
+/* ============================================
+   Dropdown - TailAdmin Style
+   ============================================ */
+
+.filament-dropdown,
+.fi-dropdown {
+    background: #ffffff !important;
+    border: 1px solid var(--ta-gray-200) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: var(--ta-shadow-lg) !important;
+    padding: 0.375rem !important;
+}
+
+.filament-dropdown-item,
+.fi-dropdown-item {
+    color: var(--ta-gray-700) !important;
+    transition: background 0.15s ease !important;
+    border-radius: 0.5rem !important;
+    padding: 0.625rem 0.75rem !important;
+    font-size: 0.875rem !important;
+}
+
+.filament-dropdown-item:hover,
+.fi-dropdown-item:hover {
+    background: var(--ta-gray-100) !important;
+}
+
+/* ============================================
+   Scrollbar - Clean Style
+   ============================================ */
+
+::-webkit-scrollbar-track {
+    background: var(--ta-gray-100) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ta-gray-300) !important;
+    border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ta-gray-400) !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+/* ============================================
+   Force Light Mode
+   ============================================ */
+
+.filament-sidebar,
+aside.filament-sidebar,
+.fi-sidebar,
+aside[class*="sidebar"] {
+    background: #ffffff !important;
+}
+
+.filament-sidebar,
+aside.filament-sidebar,
+.fi-sidebar {
+    color: var(--ta-gray-700) !important;
+}
+
+.filament-sidebar *,
+aside.filament-sidebar * {
+    color: inherit !important;
+}
