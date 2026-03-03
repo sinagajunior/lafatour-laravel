@@ -72,10 +72,6 @@ class PackagesTable
                 TextColumn::make('airline')
                     ->searchable()
                     ->toggleable(),
-                IconColumn::make('is_featured')
-                    ->label('Featured')
-                    ->boolean()
-                    ->toggleable(),
                 IconColumn::make('is_active')
                     ->label('Active')
                     ->boolean()

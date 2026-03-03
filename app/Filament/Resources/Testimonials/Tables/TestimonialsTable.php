@@ -53,10 +53,6 @@ class TestimonialsTable
                     ->label('Approved')
                     ->boolean()
                     ->toggleable(),
-                IconColumn::make('is_featured')
-                    ->label('Featured')
-                    ->boolean()
-                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label('Created')
                     ->dateTime('M j, Y')
@@ -78,8 +74,6 @@ class TestimonialsTable
                 TernaryFilter::make('is_approved')
                     ->label('Approved')
                     ->default(true),
-                TernaryFilter::make('is_featured')
-                    ->label('Featured'),
                 TrashedFilter::make(),
             ])
             ->recordActions([

@@ -52,10 +52,6 @@ class TeamMembersTable
                     ->label('Active')
                     ->boolean()
                     ->toggleable(),
-                IconColumn::make('is_featured')
-                    ->label('Featured')
-                    ->boolean()
-                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label('Created')
                     ->dateTime('M j, Y')
@@ -78,9 +74,6 @@ class TeamMembersTable
                 TernaryFilter::make('is_active')
                     ->label('Active')
                     ->default(true),
-                TernaryFilter::make('is_featured')
-                    ->label('Featured')
-                    ->placeholder('Any'),
                 TrashedFilter::make()
                     ->label('Record Status')
                     ->default('without_trashed'),
