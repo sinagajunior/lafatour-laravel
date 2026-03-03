@@ -119,7 +119,7 @@
                                class="flex-1 text-center bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg font-medium transition">
                                 View Details
                             </a>
-                            <a href="{{ route('booking.create', ['package' => $package->id]) }}"
+                            <a href="{{ route('booking.create') }}?package={{ $package->id }}"
                                class="flex-1 text-center bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg font-medium transition">
                                 Book Now
                             </a>

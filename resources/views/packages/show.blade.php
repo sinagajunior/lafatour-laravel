@@ -63,7 +63,7 @@
                             <span class="text-4xl font-bold text-sky-600">Rp {{ number_format($package->price, 0, ',', '.') }}</span>
                         @endif
                     </div>
-                    <a href="{{ route('booking.create', ['package' => $package->id]) }}"
+                    <a href="{{ route('booking.create') }}?package={{ $package->id }}"
                        class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition shadow-lg hover:shadow-xl">
                         Book Now
                     </a>
