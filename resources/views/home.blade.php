@@ -27,13 +27,13 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('packages.umroh') }}" class="btn btn-secondary text-lg px-8 py-4 shadow-xl">
+                <a href="{{ route('packages.index', 'umroh') }}" class="btn btn-secondary text-lg px-8 py-4 shadow-xl">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                     Temukan paket Umroh
                 </a>
-                <a href="{{ route('packages.haji') }}" class="btn btn-outline-white text-lg px-8 py-4">
+                <a href="{{ route('packages.index', 'haji') }}" class="btn btn-outline-white text-lg px-8 py-4">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <a href="{{ route('packages.umroh') }}" class="group card overflow-hidden hover-2xl transition-all duration-300 cursor-pointer">
+            <a href="{{ route('packages.index', 'umroh') }}" class="group card overflow-hidden hover-2xl transition-all duration-300 cursor-pointer">
                 <div class="relative h-64 overflow-hidden">
                     <img src="{{ asset('assets/images/kabahside.avif') }}" alt="Umroh Pilgrimage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-sky-900/80 via-sky-700/50 to-transparent"></div>
@@ -77,7 +77,7 @@
                 </div>
             </a>
 
-            <a href="{{ route('packages.haji') }}" class="group card overflow-hidden hover-2xl transition-all duration-300 cursor-pointer">
+            <a href="{{ route('packages.index', 'haji') }}" class="group card overflow-hidden hover-2xl transition-all duration-300 cursor-pointer">
                 <div class="relative h-64 overflow-hidden">
                     <img src="{{ asset('assets/images/madina_gate.jpg') }}" alt="Haji Pilgrimage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-amber-900/80 via-amber-700/50 to-transparent"></div>

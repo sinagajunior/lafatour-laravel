@@ -48,10 +48,6 @@ Route::post('/tracking', [TrackingController::class, 'search'])->name('tracking.
 // FAQ
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
-// Legacy route support (optional - for backward compatibility)
-Route::get('/umroh', fn() => redirect()->route('packages.umroh'));
-Route::get('/haji', fn() => redirect()->route('packages.haji'));
-
 // Test route for logo debugging
 Route::get('/test-logo', function() {
     return view('test_logo');
