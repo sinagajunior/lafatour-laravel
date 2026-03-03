@@ -35,12 +35,10 @@ class StatsOverviewWidget extends BaseWidget
         // Package stats
         $totalPackages = Package::count();
         $activePackages = Package::active()->count();
-        $featuredPackages = Package::active()->featured()->count();
 
         // Content stats
         $totalTestimonials = Testimonial::count();
         $approvedTestimonials = Testimonial::approved()->count();
-        $featuredTestimonials = Testimonial::approved()->featured()->count();
 
         $publishedPosts = BlogPost::published()->count();
         $totalGalleries = Gallery::count();
@@ -68,12 +66,12 @@ class StatsOverviewWidget extends BaseWidget
                 ->chart([7, 12, 10, 14, 8, 15, $thisMonthBookings]),
 
             Stat::make('Active Packages', $activePackages)
-                ->description($featuredPackages . ' featured • ' . $totalPackages . ' total')
+                ->description($totalPackages . ' total packages')
                 ->descriptionIcon('heroicon-o-gift')
                 ->color('success'),
 
             Stat::make('Total Testimonials', $approvedTestimonials)
-                ->description($featuredTestimonials . ' featured • ' . $totalTestimonials . ' total')
+                ->description($totalTestimonials . ' total testimonials')
                 ->descriptionIcon('heroicon-o-star')
                 ->color('primary'),
 

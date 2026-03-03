@@ -11,14 +11,14 @@ class HomeController extends Controller
     public function index()
     {
         $featuredPackages = Package::active()
-            ->featured()
             ->withCount('testimonials')
+            ->latest()
             ->take(6)
             ->get();
 
         $testimonials = Testimonial::approved()
             ->where('rating', '>=', 4)
-            ->featured()
+            ->latest()
             ->take(6)
             ->get();
 
