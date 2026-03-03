@@ -10,7 +10,7 @@ class AboutController extends Controller
     public function index()
     {
         $teamMembers = TeamMember::active()
-            ->orderBy('sort_order')
+            ->latest()
             ->get();
 
         return view('about', compact('teamMembers'));

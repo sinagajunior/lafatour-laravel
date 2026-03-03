@@ -15,7 +15,7 @@ class GalleryController extends Controller
             $query->where('category', $request->category);
         }
 
-        $galleries = $query->orderBy('sort_order')->paginate(24);
+        $galleries = $query->latest()->paginate(24);
 
         // Prepare lightbox data using image_url accessor
         $lightboxImages = $galleries->map(function($item) {
