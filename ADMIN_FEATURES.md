@@ -238,6 +238,8 @@ All export classes include:
 - **Login**: /admin/login
 - **Default Admin**: Created via seeder
 
+- pwd : MVa8jK9Fp2puI2aB8turfs
+
 ## ✅ Summary
 
 All requested features are fully implemented:
